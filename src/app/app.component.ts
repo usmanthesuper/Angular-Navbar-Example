@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-navbar';
+  navItemsData = [
+    {
+      isActive: false,
+      hasDropdown: false,
+      label: "App Name",
+      dropdownItems: ["ABC", "DEF"]
+    }
+  ]
 }

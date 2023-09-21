@@ -1,0 +1,41 @@
+<nav class="navbar" [ngStyle]="{ backgroundColor: backgroundColor }">
+                    <div class="left">
+                                        <a class="app-title">{{ appName }}</a>
+                                        <span class="divider">|</span>
+                                        <ul class="nav-menu">
+                                                            <li *ngFor="let item of navItems"
+                                                                                [class.active]="item.isActive">
+                                                                                <a *ngIf="!item.hasDropdown">{{
+                                                                                                    item.label }}</a>
+                                                                                <div *ngIf="item.hasDropdown"
+                                                                                                    class="dropdown">
+                                                                                                    <a>{{ item.label
+                                                                                                                        }}</a>
+                                                                                                    <div
+                                                                                                                        class="dropdown-content">
+                                                                                                                        <a
+                                                                                                                                            *ngFor="let subItem of item.dropdownItems">{{
+                                                                                                                                            subItem.label
+                                                                                                                                            }}</a>
+                                                                                                    </div>
+                                                                                </div>
+                                                            </li>
+                                        </ul>
+                    </div>
+                    <div class="right">
+                                        <ng-container *ngIf="userHasPermission; else noIcon">
+                                                            <a>
+                                                                                <i class="icon">Icon</i>
+                                                            </a>
+                                        </ng-container>
+                                        <ng-template #noIcon></ng-template>
+                                        <div class="user-dropdown">
+                                                            <span>{{ userName }}</span>
+                                                            <div class="user-dropdown-content">
+                                                                                <a>User Settings</a>
+                                                                                <a>User Settings</a>
+                                                                                <a>User Settings</a>
+                                                            </div>
+                                        </div>
+                    </div>
+</nav>
