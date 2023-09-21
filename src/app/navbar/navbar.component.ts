@@ -10,5 +10,5 @@ export class NavbarComponent {
   @Input() navItems: any[] = []; // Replace 'any[]' with the actual type for your navigation items.
   @Input() userName: string = '';
   @Input() backgroundColor: string = 'blue';
-  @Input() userHasPermission: boolean = true;
+  @Input() userHasPermission: boolean = false;
 }

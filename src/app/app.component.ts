@@ -9,10 +9,10 @@ export class AppComponent {
   title = 'angular-navbar';
   navItemsData = [
     {
-      isActive: false,
-      hasDropdown: false,
+      isActive: true,
+      hasDropdown: true,
       label: "App Name",
-      dropdownItems: ["ABC", "DEF"]
+      dropdownItems: [{label:"ABC"}, {label:"DEF"}]
     }
   ]
 }

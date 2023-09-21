@@ -3,21 +3,13 @@
                                         <a class="app-title">{{ appName }}</a>
                                         <span class="divider">|</span>
                                         <ul class="nav-menu">
-                                                            <li *ngFor="let item of navItems"
-                                                                                [class.active]="item.isActive">
-                                                                                <a *ngIf="!item.hasDropdown">{{
-                                                                                                    item.label }}</a>
-                                                                                <div *ngIf="item.hasDropdown"
-                                                                                                    class="dropdown">
-                                                                                                    <a>{{ item.label
-                                                                                                                        }}</a>
-                                                                                                    <div
-                                                                                                                        class="dropdown-content">
-                                                                                                                        <a
-                                                                                                                                            *ngFor="let subItem of item.dropdownItems">{{
-                                                                                                                                            subItem.label
-                                                                                                                                            }}</a>
-                                                                                                    </div>
+                                                            <li *ngFor="let item of navItems" [class.active]="item.isActive">
+                                                                                <a *ngIf="!item.hasDropdown">{{item.label}}</a>
+                                                                                <div *ngIf="item.hasDropdown" class="dropdown">
+                                                                                <a>{{item.label}}</a>
+                                                                                <div class="dropdown-content">
+                                                                                                    <a *ngFor="let subItem of item.dropdownItems" style="padding: 5px;display: block;color: #000;">{{subItem.label}}</a>
+                                                                                </div>
                                                                                 </div>
                                                             </li>
                                         </ul>
